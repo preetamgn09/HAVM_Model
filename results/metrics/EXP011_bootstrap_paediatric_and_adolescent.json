@@ -1,0 +1,77 @@
+{
+  "experiment_id": "EXP011",
+  "stage": "bootstrap",
+  "group": "paediatric_and_adolescent",
+  "environment": {
+    "timestamp_utc": "2026-08-30T05:50:37.466940+00:00",
+    "git_commit": "NOT_A_GIT_REPO",
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v22-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.2",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.1"
+    }
+  },
+  "bootstrap": {
+    "n_resamples": 2000,
+    "seed": 20260819,
+    "resampling_unit": "record",
+    "scheme": "stratified two-sample: group members and remainder resampled separately with replacement at observed sizes",
+    "detector_fit": "held fixed; not resampled"
+  },
+  "interval": {
+    "n_group": 557,
+    "n_remainder": 55291,
+    "mahalanobis": {
+      "auroc": 0.9301438801663288,
+      "ci95": [
+        0.9266687795829521,
+        0.9336238586461115
+      ],
+      "excludes_chance": true
+    },
+    "knn": {
+      "auroc": 0.4313255666031011,
+      "ci95": [
+        0.4090995903281372,
+        0.4538339973517625
+      ],
+      "excludes_chance": true
+    },
+    "isolation_forest": {
+      "auroc": 0.609402700976232,
+      "ci95": [
+        0.588851773545985,
+        0.6310798518054646
+      ],
+      "excludes_chance": true
+    },
+    "predictive_entropy": {
+      "auroc": 0.2348629271333357,
+      "ci95": [
+        0.21146368973143467,
+        0.2589538833656573
+      ],
+      "excludes_chance": true
+    },
+    "max_softmax": {
+      "auroc": 0.2348629271333357,
+      "ci95": [
+        0.21268359650378624,
+        0.25747431242441854
+      ],
+      "excludes_chance": true
+    },
+    "energy": {
+      "auroc": 0.8022050916698712,
+      "ci95": [
+        0.7828642405367755,
+        0.8211059929142
+      ],
+      "excludes_chance": true
+    }
+  },
+  "energy_note": "energy is computed on a logistic regression fitted to the same features; the frozen gradient-boosted model produces no logit vector. The value does not characterise the deployed model."
+}

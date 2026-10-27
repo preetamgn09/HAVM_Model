@@ -1,0 +1,24 @@
+# Render Blueprint: one Docker web service serving the API (/api) and the frontend.
+# Deploy: Render dashboard -> New -> Blueprint -> select this repository.
+services:
+  - type: web
+    name: havm-observability
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    # free: 512 MB, no payment method needed, sleeps after ~15 min idle (first request then
+    # takes longer). Replays peak at ~400 MB. Change to "starter" (paid, always on) for a
+    # live presentation. See webapp/DEPLOYMENT.md.
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: HAVM_REPLAY_ENABLED
+        value: "true"
+      - key: HAVM_ALLOW_DATASET_FETCH       # download + SHA-256 verify D2 on first replay
+        value: "true"
+      - key: HAVM_DATASET_SOURCE            # "mirror" (GitHub, checksum-verified) or "uci"
+        value: mirror
+      - key: HAVM_REPLAY_TIMEOUT_SECONDS
+        value: "600"
+      - key: HAVM_MAX_STORED_RUNS
+        value: "20"
