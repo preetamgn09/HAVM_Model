@@ -1,0 +1,54 @@
+{
+  "experiment_id": "EXP011",
+  "stage": "export",
+  "environment": {
+    "timestamp_utc": "2026-08-30T05:49:09.452026+00:00",
+    "git_commit": "NOT_A_GIT_REPO",
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v22-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.2",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.1"
+    }
+  },
+  "config_hash": "9d0c9d48c4bad67c51e9adce69fac547ed93e8f4f79d3208d539a98fb73a3b46",
+  "per_record_scores": "results/scores/EXP011_deployment_ood_scores.csv.gz",
+  "evaluated_groups": {
+    "paediatric_and_adolescent": 557,
+    "rare_specialty": 8681,
+    "extreme_prior_utilisation": 1395
+  },
+  "reproduction_check": {
+    "passed": true,
+    "tolerance": 1e-06,
+    "n_values_checked": 18
+  },
+  "group_auroc_recomputed": {
+    "paediatric_and_adolescent": {
+      "mahalanobis": 0.9301438801663288,
+      "knn": 0.4313255666031011,
+      "isolation_forest": 0.609402700976232,
+      "predictive_entropy": 0.2348629271333357,
+      "max_softmax": 0.2348629271333357,
+      "energy": 0.8022050916698712
+    },
+    "rare_specialty": {
+      "mahalanobis": 0.5480542294277656,
+      "knn": 0.5448103872524727,
+      "isolation_forest": 0.5223250197083708,
+      "predictive_entropy": 0.5382633217795443,
+      "max_softmax": 0.5382633217795443,
+      "energy": 0.3956505640704738
+    },
+    "extreme_prior_utilisation": {
+      "mahalanobis": 0.7861910047446791,
+      "knn": 0.9459435571250259,
+      "isolation_forest": 0.6558277774256277,
+      "predictive_entropy": 0.9789022225408028,
+      "max_softmax": 0.9789022225408028,
+      "energy": 0.01597377686600532
+    }
+  }
+}

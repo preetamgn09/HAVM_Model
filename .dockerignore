@@ -1,0 +1,9 @@
+data/
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.venv
+webapp/frontend/node_modules
+webapp/frontend/dist
+webapp/runtime
+.git

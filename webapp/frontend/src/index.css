@@ -1,0 +1,44 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { color-scheme: dark; }
+  body { @apply bg-ink text-text font-sans antialiased; font-feature-settings: "tnum" 1; }
+  :focus-visible { outline: 2px solid #5BC6E4; outline-offset: 2px; border-radius: 4px; }
+  ::selection { background: #1D4A4A; }
+  h1 { @apply text-[1.375rem] leading-8 font-semibold tracking-tight; }
+  h2 { @apply text-[0.9375rem] leading-6 font-semibold; }
+  h3 { @apply text-sm font-medium; }
+}
+
+@layer components {
+  .panel { @apply bg-surface border border-hair rounded-lg; }
+  .panel-pad { @apply p-5; }
+  .label { @apply text-xs text-muted; }
+  .num { font-variant-numeric: tabular-nums; }
+  .prose-tight p + p { @apply mt-2; }
+  .btn { @apply inline-flex items-center gap-2 rounded-md px-3 h-8 text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed; }
+  .btn-primary { @apply bg-teal text-ink hover:bg-[#3cc7b4]; }
+  .btn-quiet { @apply border border-line text-text hover:bg-raised; }
+  .field { @apply bg-ink border border-line rounded-md h-8 px-2.5 text-sm text-text placeholder:text-faint focus:border-cyan outline-none; }
+  .tab { @apply px-3 h-8 text-sm rounded-md text-muted hover:text-text; }
+  .tab-on { @apply bg-raised text-text; }
+  .tbl { @apply w-full text-sm; }
+  .tbl th { @apply text-left font-medium text-xs text-muted px-3 py-2 border-b border-line whitespace-nowrap; }
+  .tbl td { @apply px-3 py-2 border-b border-hair align-top; }
+  .tbl tr.sel td { @apply bg-raised; }
+  .tbl tbody tr { @apply hover:bg-[#15243b]; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.recharts-cartesian-axis-tick-value { fill: #8C9CB5; font-size: 11px; }
+.recharts-legend-item-text { color: #8C9CB5 !important; font-size: 12px; }

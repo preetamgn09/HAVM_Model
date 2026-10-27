@@ -1,0 +1,21 @@
+# Web application dependencies.
+#
+# The research libraries are pinned to the exact versions recorded in
+# results/models/EXP001_model_card.json, because the frozen model is a joblib pickle:
+# loading it under a different scikit-learn is unsupported, and the replay reproduces
+# EXP003 exactly only under these versions. The research project's own
+# requirements.txt is left unchanged.
+numpy==2.4.4
+pandas==3.0.2
+scikit-learn==1.8.0
+scipy==1.17.1
+PyYAML==6.0.3
+joblib==1.5.3
+
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.1
+
+# tests
+pytest>=7.0
+httpx==0.28.1

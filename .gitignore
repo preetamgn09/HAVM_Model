@@ -1,0 +1,21 @@
+# Dataset is NOT stored in version control. Acquire it with:
+#   python scripts/fetch_d2.py --source uci
+# The expected SHA-256 is recorded in configs/d2_diabetes.yaml and the pipeline
+# refuses to run on a mismatch.
+data/
+
+# Build and environment artefacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+
+# The frozen model in results/models/ IS tracked deliberately: it is the object
+# monitored throughout, and its hash is recorded in the model card.
+
+# Web application build and runtime artefacts
+webapp/frontend/node_modules/
+webapp/frontend/dist/
+webapp/frontend/*.tsbuildinfo
+webapp/runtime/
